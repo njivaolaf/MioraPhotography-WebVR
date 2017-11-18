@@ -9,10 +9,12 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
-    "browserify": "^14.5.0"
+    "browserify": "^14.5.0",
+    "watchify": "^3.9.0"
   },
   "scripts": {
-    "build": "browserify app.js -o bundle.js"
+    "build": "browserify app.js -o bundle.js",
+    "watch": "watchify app.js -o bundle.js"
   },
   "repository": {
     "type": "git",

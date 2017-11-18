@@ -11,7 +11,6 @@
 
   <a-scene fog="type: linear; color: #AAB; far: 100; near: 90">
     <a-assets>
-      <img id="backgroundmain" src="background360.jpg" />
       <img id="pic01" src="images/img01.JPG" />
       <img id="pic02" src="images/img02.JPG" />
       <img id="pic03" src="images/img03.JPG" />
@@ -21,7 +20,7 @@
       <a-circle color="#CCC" radius="5" position="10 0 -20"></a-circle>
   
     <!-- <a-box width="4px" height="4px"position="0 0 0"  rotation="0 0 0" ></a-box>  -->
-    <a-curvedimage width="40px" height="40px" radius="30" theta-length="100" position="0 0 -10" src="#pic01" rotation="0 120 0">
+    <a-curvedimage id="img1"width="40px" height="40px" radius="30" theta-length="100" position="0 0 -10" src="#pic01" rotation="0 120 0">
     </a-curvedimage>
     <a-curvedimage width="40px" height="40px" radius="30" theta-length="100" position="-30 0 0" src="#pic02" rotation="0 -145 0"></a-curvedimage>
     <a-curvedimage width="34px" height="65px" radius="30" theta-length="100" position="10 0 0" src="#pic03" rotation="0 45 0"></a-curvedimage>
