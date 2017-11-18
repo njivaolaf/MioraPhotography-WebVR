@@ -6,13 +6,12 @@ var mainCamera;
 function init_setup() {
     console.log('INFO: initial setup');
     //setup Camera;
-    mainCamera = document.querySelector('a-camera');
 
-    someImage = $("img1");
+    someImage = $("myplane");
     someImage.mouseenter(function () {
         console.log('Entered');
         // document.getElementById('mycursor').remove();
-        someImage.remove();
+        // someImage.remove();
     });
 }
 init_setup();
