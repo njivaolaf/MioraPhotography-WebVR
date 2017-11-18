@@ -1,11 +1,10 @@
 $ = require('jquery')
 
-console.log('Now in main.js');
-
+ console.log('INFO: now in app.js');
 var someImage;
 var mainCamera;
 function init_setup() {
-    console.log('initial setup');
+    console.log('INFO: initial setup');
     //setup Camera;
     mainCamera = document.querySelector('a-camera');
 
