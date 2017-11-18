@@ -1,0 +1,27 @@
+{
+  "name": "mioraphotography-webvr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "aframe-extras": "^3.12.4",
+    "aframe-extras.grid": "^3.12.4",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "browserify": "^14.5.0"
+  },
+  "scripts": {
+    "build": "browserify app.js -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njivaolaf/MioraPhotography-WebVR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njivaolaf/MioraPhotography-WebVR/issues"
+  },
+  "homepage": "https://github.com/njivaolaf/MioraPhotography-WebVR#readme"
+}
