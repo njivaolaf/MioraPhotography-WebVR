@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "aframe": "^0.7.1",
     "aframe-extras": "^3.12.4",
     "aframe-extras.grid": "^3.12.4",
     "jquery": "^3.2.1"

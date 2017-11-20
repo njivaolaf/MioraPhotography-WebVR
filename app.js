@@ -1,5 +1,5 @@
 $ = require('jquery')
-
+require('aframe');
  console.log('INFO: now in app.js');
 var someImage;
 var mainCamera;
