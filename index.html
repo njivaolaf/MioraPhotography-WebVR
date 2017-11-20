@@ -7,35 +7,51 @@
 
 <body>
 
-  <a-scene fog="type: linear; color: #393947; far: 70; near: 50">
+  <a-scene fog="type: linear; color: #f9eeca; far: 70; near: 50" vr-mode-ui="enabled: true">
     <a-assets>
-      <img id="pic01" src="images/img01.JPG" />
-      <img id="pic02" src="images/img02.JPG" />
-      <img id="pic03" src="images/img03.JPG" />
+      <img id="logo" src="https://ucarecdn.com/481a4191-b9a3-425e-9080-420eddf3db80/" crossorigin="anonymous" />
 
-      <img id="logo" src="https://ucarecdn.com/481a4191-b9a3-425e-9080-420eddf3db80/" crossorigin="anonymous"/>
-
-      <!-- <a-asset-item id="camObj" src="https://ucarecdn.com/a75ae793-acae-4250-a4b9-b72a68c0c9ad/" crossorigin="anonymous"></a-asset-item> -->
+      <img id="landscapelabelImg" src="https://ucarecdn.com/39067a77-478c-4cb4-90ce-2673b5732773/" crossorigin="anonymous" />
+      <img id="urbanlabelImg" src="https://ucarecdn.com/1997483b-3be7-4f51-9203-7781027b24ab/" crossorigin="anonymous" />
+      <img id="blackANDwhitelabelImg" src="https://ucarecdn.com/492eb38e-01bb-48cb-ad11-7f7934d0f4ef/" crossorigin="anonymous"
+      />
+      <img id="portraitlabelImg" src="https://ucarecdn.com/75083b40-633d-42a7-9152-33b5d0ddcc4b/" crossorigin="anonymous" />
 
     </a-assets>
     <!-- <a-sky color="#545454" radius="200"></a-sky> -->
-    <a-circle color="#CCC" radius="5" position="10 0 -20"></a-circle>
+    <a-entity id="mainMenu">
 
-    <!-- <a-entity obj-model="obj: #camObj;" scale="0.1 0.1 0.1" position="0 0 -2" material="color:#7e7e7e;"></a-entity> -->
+      <a-entity id="menuImages">
+        <a-curvedimage class="menuImage" material="color:blue" id="landscapeImg" width="10px" height="10px" radius="10" theta-length="120"
+          position="0 2 -6" rotation="0 120 0">
+        </a-curvedimage>
+        <a-curvedimage material="color:green" id="urbanImg" width="10px" height="10px" radius="10" theta-length="120" position="0 2 6"
+          rotation="0 -60 0">
+        </a-curvedimage>
+        <a-curvedimage material="color:yellow" id="blackANDwhiteImg" width="10px" height="10px" radius="10" theta-length="120" position="-6 2 0"
+          rotation="0 -150 0">
+        </a-curvedimage>
+        <a-curvedimage material="color:orange" id="portraitImg" width="10px" height="10px" radius="10" theta-length="120" position="6 2 0"
+          rotation="0 30 0">
+        </a-curvedimage>
 
-    <a-curvedimage id="img1" width="40px" height="40px" radius="30" theta-length="100" position="0 0 -10" src="#pic01" rotation="0 120 0">
-    </a-curvedimage>
-    <a-curvedimage width="40px" height="40px" radius="30" theta-length="100" position="-30 0 0" src="#pic02" rotation="0 -145 0"></a-curvedimage>
-    <a-curvedimage width="34px" height="65px" radius="30" theta-length="100" position="10 0 0" src="#pic03" rotation="0 45 0"></a-curvedimage>
+      </a-entity>
+      <a-entity i="menuLabelGroup">
+        <a-image src='#landscapelabelImg' position="0 3 -5" width="5" height="5"></a-image>
+        <a-image src='#urbanlabelImg' position="0 3 5" rotation="0 180 0" width="5" height="5"></a-image>
+        <a-image src='#blackANDwhitelabelImg' position="-5 3 0" rotation="0 90 0" width="5" height="5"></a-image>
+        <a-image src='#portraitlabelImg' position="5 3 0" rotation="0 -90 0" width="5" height="5"></a-image>
 
+      </a-entity>
+
+    </a-entity>
     <a-image src='#logo' rotation="-90 0 0" position="0 -0.5 0" width="5" height="5"></a-image>
-    <a-plane position="0 -10 0" rotation="-90 0 0" scale="200 200 200" color="#a6a6a6" id="myplane"></a-plane>
+    <a-plane position="0 -10 0" rotation="-90 0 0" scale="200 200 200" color="#f9eeca" id="myplane"></a-plane>
     <a-sky color="#545454" radius="200"></a-sky>
 
-    <a-entity position="0 2 0" camera look-controls>
-        <a-cursor id="mycursor" color="white">
-        </a-cursor>
-
+    <a-entity camera="active: true; userHeight: 1.6" look-controls>
+      <a-cursor id="mycursor">
+      </a-cursor>
     </a-entity>
   </a-scene>
 </body>

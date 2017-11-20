@@ -1,21 +1,36 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-$ = require('jquery')
+$ = require('jquery');
 require('aframe');
- console.log('INFO: now in app.js');
-var someImage;
-var mainCamera;
-function init_setup() {
+var menuImages;
+function after_load_setup() {
     console.log('INFO: initial setup');
     //setup Camera;
+    // your code
+    console.log('document is ready');
 
-    someImage = $("myplane");
-    someImage.mouseenter(function () {
-        console.log('Entered');
-        // document.getElementById('mycursor').remove();
-        // someImage.remove();
+    menuImages = document.getElementById('menuImages');
+    menuImages.addEventListener('mouseenter', function (event) {
+
+        console.log('INFO: mouseenter NOW,EVENT:', event);
+        console.log
+        switch (event.path[0].id) {
+            default:
+                console.log('path is =',event.path[0].id);
+                break;
+        }
     });
+
+    // someImage = $("landscapeImg");
+    // someImage.mouseenter(function () {
+    //     console.log('Entered');
+    //     someImage.remove();
+    // });
+
 }
-init_setup();
+
+$(document).ready(function () {
+    after_load_setup();
+});
 },{"aframe":2,"jquery":3}],2:[function(require,module,exports){
 (function (global){
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.AFRAME = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){

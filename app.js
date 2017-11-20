@@ -1,17 +1,35 @@
-$ = require('jquery')
+$ = require('jquery');
 require('aframe');
- console.log('INFO: now in app.js');
-var someImage;
-var mainCamera;
-function init_setup() {
+var menuImages;
+function after_load_setup() {
     console.log('INFO: initial setup');
     //setup Camera;
+    // your code
+    console.log('document is ready');
 
-    someImage = $("myplane");
-    someImage.mouseenter(function () {
-        console.log('Entered');
-        // document.getElementById('mycursor').remove();
-        // someImage.remove();
+    menuImages = document.getElementById('menuImages');
+    menuImages.addEventListener('mouseenter', function (event) {
+        try {
+            switch (event.path[0].id) {
+                default:
+                    console.log('path is =', event.path[0].id);
+                    break;
+            }
+        }
+        catch (e) {
+            console.log(e);
+        }
+
     });
+
+    // someImage = $("landscapeImg");
+    // someImage.mouseenter(function () {
+    //     console.log('Entered');
+    //     someImage.remove();
+    // });
+
 }
-init_setup();
+
+$(document).ready(function () {
+    after_load_setup();
+});
