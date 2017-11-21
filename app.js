@@ -1,5 +1,7 @@
 $ = require('jquery');
 require('aframe');
+var extendDeep = AFRAME.utils.extendDeep;
+var meshMixins = AFRAME.primitives.getMeshMixin();
 var menuImages;
 function after_load_setup() {
     console.log('INFO: initial setup');
