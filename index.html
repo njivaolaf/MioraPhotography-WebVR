@@ -22,12 +22,11 @@
 
 
     </a-assets>
-    <!-- <a-sky color="#545454" radius="200"></a-sky> -->
-    <a-ocean color="aqua" depth="100" width="100"></a-ocean>
+    <!-- <a-box log="Hola!"></a-box> -->
     <a-entity id="mainMenu">
 
       <a-entity id="menuImages">
-        <a-curvedimage class="menuImage" material="color:blue" id="landscapeImg" width="10px" height="10px" radius="10" theta-length="120"
+        <a-curvedimage material="color:blue" id="landscapeImg" width="10px" height="10px" radius="10" theta-length="120"
           position="0 2 -6" rotation="0 120 0">
         </a-curvedimage>
         <a-curvedimage material="color:green" id="urbanImg" width="10px" height="10px" radius="10" theta-length="120" position="0 2 6"
@@ -41,7 +40,7 @@
         </a-curvedimage>
 
       </a-entity>
-      <a-entity i="menuLabelGroup">
+      <a-entity id="menuLabelGroup">
         <a-image src='#landscapelabelImg' position="0 3 -5" width="5" height="5"></a-image>
         <a-image src='#urbanlabelImg' position="0 3 5" rotation="0 180 0" width="5" height="5"></a-image>
         <a-image src='#blackANDwhitelabelImg' position="-5 3 0" rotation="0 90 0" width="5" height="5"></a-image>
@@ -50,6 +49,7 @@
       </a-entity>
 
     </a-entity>
+    <a-entity id="currentGallery"></a-entity>
     <a-image src='#logo' rotation="-90 0 0" position="0 -0.5 0" width="5" height="5"></a-image>
     <a-plane position="0 -10 0" rotation="-90 0 0" scale="200 200 200" color="#f9eeca" id="myplane"></a-plane>
     <a-sky color="#545454" radius="200"></a-sky>
