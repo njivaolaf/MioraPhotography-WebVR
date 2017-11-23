@@ -17,8 +17,7 @@
       />
       <img id="portraitlabelImg" src="https://ucarecdn.com/75083b40-633d-42a7-9152-33b5d0ddcc4b/" crossorigin="anonymous" />
 
-      <img id="landscapeBackgroundImg" src="https://ucarecdn.com/fd75f508-d0c7-4455-91fc-fec9cd8d33dc/" crossorigin="anonymous"
-      />
+      <img id="blackAndWhiteBkgImg" src="https://ucarecdn.com/fd75f508-d0c7-4455-91fc-fec9cd8d33dc/" crossorigin="anonymous" />
 
 
     </a-assets>
@@ -26,31 +25,41 @@
     <a-entity id="mainMenu">
 
       <a-entity id="menuImages">
-        <a-curvedimage material="color:blue" id="landscapeImg" width="10px" height="10px" radius="10" theta-length="120"
-          position="0 2 -6" rotation="0 120 0">
-        </a-curvedimage>
-        <a-curvedimage material="color:green" id="urbanImg" width="10px" height="10px" radius="10" theta-length="120" position="0 2 6"
-          rotation="0 -60 0">
-        </a-curvedimage>
-        <a-curvedimage src="#landscapeBackgroundImg" id="blackANDwhiteImg" width="10px" height="10px" radius="10" theta-length="120"
-          position="-6 2 0" rotation="0 -150 0">
-        </a-curvedimage>
-        <a-curvedimage material="color:orange" id="portraitImg" width="10px" height="10px" radius="10" theta-length="120" position="6 2 0"
-          rotation="0 30 0">
-        </a-curvedimage>
 
-      </a-entity>
-      <a-entity id="menuLabelGroup">
-        <a-image src='#landscapelabelImg' position="0 3 -5" width="5" height="5"></a-image>
-        <a-image src='#urbanlabelImg' position="0 3 5" rotation="0 180 0" width="5" height="5"></a-image>
-        <a-image src='#blackANDwhitelabelImg' position="-5 3 0" rotation="0 90 0" width="5" height="5"></a-image>
-        <a-image src='#portraitlabelImg' position="5 3 0" rotation="0 -90 0" width="5" height="5"></a-image>
+        <a-entity id="landscapeMenuGroup">
+          <a-curvedimage material="color:blue; opacity:1" id="landscapeImg" width="10px" height="10px" radius="10" theta-length="120" position="0 2 -6"
+            rotation="0 120 0">
+          </a-curvedimage>
+          <a-image src='#landscapelabelImg' material="opacity:1" position="0 3 -5" width="5" height="5"></a-image>
+        </a-entity>
+
+        <a-entity id="urbanMenuGroup">
+          <a-curvedimage material="color:green; opacity:1" id="urbanImg" width="10px" height="10px" radius="10" theta-length="120" position="0 2 6"
+            rotation="0 -60 0">
+          </a-curvedimage>
+          <a-image material="opacity:1" src='#urbanlabelImg' position="0 3 5" rotation="0 180 0" width="5" height="5"></a-image>
+        </a-entity>
+
+        <a-entity id="blackAndWhiteGroup">
+          <a-curvedimage src="#blackAndWhiteBkgImg" id="blackAndWhiteImg" width="10px" height="10px" radius="10" theta-length="120"
+            position="-6 2 0" rotation="0 -150 0">
+          </a-curvedimage>
+          <a-image src='#blackANDwhitelabelImg' material="opacity:1" position="-5 3 0" rotation="0 90 0" width="5" height="5"></a-image>
+        </a-entity>
+
+        <a-entity id="portraitMenuGroup">
+          <a-curvedimage material="color:orange; opacity:1" id="portraitImg" width="10px" height="10px" radius="10" theta-length="120" position="6 2 0"
+            rotation="0 30 0">
+          </a-curvedimage>
+          <a-image src='#portraitlabelImg' material="opacity:1" position="5 3 0" rotation="0 -90 0" width="5" height="5"></a-image>
+        </a-entity>
 
       </a-entity>
 
     </a-entity>
     <a-entity id="currentGallery"></a-entity>
-    <a-image src='#logo' rotation="-90 0 0" position="0 -0.5 0" width="5" height="5"></a-image>
+    <a-image src='#logo' rotation="-90 0 0" position="0 -0.5 0" width="5" height="5">
+    </a-image>
     <a-plane position="0 -10 0" rotation="-90 0 0" scale="200 200 200" color="#f9eeca" id="myplane"></a-plane>
     <a-sky color="#545454" radius="200"></a-sky>
 
