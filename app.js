@@ -28,18 +28,26 @@ class fadeOutAnimation {
     }
 }
 
-class fadeOutAnimInChilds {
+class fadeOutAnimInChilds2gen {
     // fadeOutAnim = new fadeOutAnimation();
-    constructor(parentNode, childIndexes) {
+    constructor(parentNodes, childIndexes) {
         var allowAnimEndBool = false;
-        for (let oneChildIndex in childIndexes) {
-            if (oneChildIndex == 0) {
-                allowAnimEndBool = true;
-            } else {
-                allowAnimEndBool = false;
+
+        for (let oneParent of parentNodes) {
+            if (oneParent.localName == 'a-entity') {
+
+                for (let oneChildIndex in childIndexes) {
+                    if (oneChildIndex == 0) {
+                        allowAnimEndBool = true;
+                    } else {
+                        allowAnimEndBool = false;
+                    }
+                    oneParent.childNodes[childIndexes[oneChildIndex]].appendChild(new fadeOutAnimation(allowAnimEndBool).fadeOutNode);
+                }
             }
-            parentNode[childIndexes[oneChildIndex]].appendChild(new fadeOutAnimation(allowAnimEndBool).fadeOutNode);
         }
+
+
     }
 }
 
@@ -66,12 +74,12 @@ function after_load_SETUP() {
                 //      console.log('path is =', event.path[0].id);
                 //     break;
                 // }
-                var imglblParent = event.detail.target.parentElement;
-                var img0label0CHILDS = imglblParent.childNodes;
+                var imglblParent = currentTarget.parentElement;
+                //     var img0label0CHILDS = imglblParent.childNodes;
                 // var fade0prototype = new fadeOutAnimation();
                 // var fade1prototype = new fadeOutAnimation();
 
-                var fadeOUTimagesLabels = new fadeOutAnimInChilds(img0label0CHILDS, [1, 3]);
+                var fadeOUTimagesLabels = new fadeOutAnimInChilds2gen(menuImages.childNodes, [1, 3]);
                 // imglblParent.appendChild(fadeOutNode);
             } catch (e) {
                 console.log(e);
