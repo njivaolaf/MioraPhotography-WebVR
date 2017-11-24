@@ -9,18 +9,27 @@ var currentGallery;
 //Hover setup
 var canHoverMainMenu = true;
 
-class fadeOutAnimation {
-    constructor(allowAnimEnd) {
-        function endingAnimation() {
+class fadeAnimation {
+    constructor(allowAnimEnd, opacityValue) {
+        function hide_menu_images() {
             console.log('event fade out END now');
+            var childsGen0 = menuImages.childNodes; // the 4 menu groups    
+         
+                childsGen0[1].setAttribute('material','visible',false);
+                childsGen0[3].setAttribute('material','visible',false);
+                
+                childsGen0[5].setAttribute('material','visible',false);
+                
+                childsGen0[7].setAttribute('material','visible',false);
+            
         }
         this.allowAnimationEndAction = allowAnimEnd;
         this.fadeOutNode = document.createElement('a-animation');
         this.fadeOutNode.setAttribute('attribute', 'material.opacity');
-        this.fadeOutNode.setAttribute('to', 0);
+        this.fadeOutNode.setAttribute('to', opacityValue);
         if (this.allowAnimationEndAction) {
             this.fadeOutNode.addEventListener('animationend', function (event) {
-                endingAnimation();
+                hide_menu_images();
 
             });
         }
@@ -29,18 +38,19 @@ class fadeOutAnimation {
 
 class fadeOutAnimInChilds2gen {
     constructor(parentNodes, childIndexes) {
-        var allowAnimEndBool = false;
+        var allowAnimEndBool = true;
 
         for (let oneParent of parentNodes) {
             if (oneParent.localName == 'a-entity') {
 
                 for (let oneChildIndex in childIndexes) {
-                    if (oneChildIndex == 0) {
-                        allowAnimEndBool = true;
-                    } else {
-                        allowAnimEndBool = false;
-                    }
-                    oneParent.childNodes[childIndexes[oneChildIndex]].appendChild(new fadeOutAnimation(allowAnimEndBool).fadeOutNode);
+                    // if (oneChildIndex == 0) {
+                    //     allowAnimEndBool = true;
+                    // } else {
+                    //     allowAnimEndBool = false;
+                    // }
+                    oneParent.childNodes[childIndexes[oneChildIndex]].appendChild(new fadeAnimation(allowAnimEndBool, 0).fadeOutNode);
+                    allowAnimEndBool = false;
                 }
             }
         }
@@ -56,7 +66,7 @@ function init_SETUP() {
 function after_load_SETUP() {
     console.log('INFO: initial setup');
     mainMenu = document.querySelector('#mainMenu');
-    currentGallery = document.querySelector('#currentGallery');
+    // currentGallery = document.querySelector('#currentGallery');
     menuImages = document.querySelector('#menuImages');
     window.setTimeout(function () {
         start_listener_in_MenuImages();
