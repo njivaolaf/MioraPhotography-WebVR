@@ -24,12 +24,10 @@ class fadeOutAnimation {
 
             });
         }
-
     }
 }
 
 class fadeOutAnimInChilds2gen {
-    // fadeOutAnim = new fadeOutAnimation();
     constructor(parentNodes, childIndexes) {
         var allowAnimEndBool = false;
 
@@ -46,8 +44,6 @@ class fadeOutAnimInChilds2gen {
                 }
             }
         }
-
-
     }
 }
 
@@ -62,6 +58,13 @@ function after_load_SETUP() {
     mainMenu = document.querySelector('#mainMenu');
     currentGallery = document.querySelector('#currentGallery');
     menuImages = document.querySelector('#menuImages');
+    window.setTimeout(function () {
+        start_listener_in_MenuImages();
+    }, 4000);
+
+}
+
+function start_listener_in_MenuImages() {
     menuImages.addEventListener('mouseenter', function (event) {
         // INFO // console.log('I was clicked at: ', event.detail.intersection.point);
         if (canHoverMainMenu) {
