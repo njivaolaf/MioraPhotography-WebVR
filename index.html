@@ -18,12 +18,14 @@
       <img id="portraitlabelImg" src="https://ucarecdn.com/75083b40-633d-42a7-9152-33b5d0ddcc4b/" crossorigin="anonymous" />
 
       <img id="blackAndWhiteBkgImg" src="https://ucarecdn.com/fd75f508-d0c7-4455-91fc-fec9cd8d33dc/" crossorigin="anonymous" />
+      <img id="portraitBkgImg" src="https://ucarecdn.com/f0aff70a-c896-4023-8a2e-680ae104e94f/" crossorigin="anonymous" />
 
-
+      <img id="camImg" src="https://ucarecdn.com/f2cffccc-fa2c-46cb-b73a-a911c656d55b/" crossorigin="anonymous" />
+      <img id="shadowImg" src="https://ucarecdn.com/33b28f58-fce9-491e-8e54-e9658f10e546/" crossorigin="anonymous" />
     </a-assets>
 
     <a-assets id="landscapeMenuGroupImgs">
-          <img id="forest" src="https://ucarecdn.com/fd75f508-d0c7-4455-91fc-fec9cd8d33dc/" crossorigin="anonymous" />
+      <img id="forest" src="https://ucarecdn.com/fd75f508-d0c7-4455-91fc-fec9cd8d33dc/" crossorigin="anonymous" />
 
     </a-assets>
 
@@ -32,46 +34,112 @@
 
       <a-entity id="menuImages">
 
-        <a-entity id="landscapeMenuGroup">
-          <a-curvedimage material="color:blue; opacity:1" id="landscapeImg" width="10px" height="10px" radius="10" theta-length="120"
-            position="0 2 -6" rotation="0 120 0">
+        <a-entity id="landscape">
+          <a-curvedimage material="color:blue" id="landscapeImg" width="10px" height="10px" radius="10" theta-length="120" position="0 2 -6"
+            rotation="0 120 0">
           </a-curvedimage>
-          <a-image src='#landscapelabelImg' material="opacity:1" position="0 3 -5" width="5" height="5"></a-image>
+          <a-image src='#landscapelabelImg' position="0 0.5 -5" width="5" height="5"></a-image>
         </a-entity>
 
-        <a-entity id="urbanMenuGroup">
-          <a-curvedimage material="color:green; opacity:1" id="urbanImg" width="10px" height="10px" radius="10" theta-length="120"
-            position="0 2 6" rotation="0 -60 0">
+        <a-entity id="urban">
+          <a-curvedimage material="color:green" id="urbanImg" width="10px" height="10px" radius="10" theta-length="120" position="0 2 6"
+            rotation="0 -60 0">
           </a-curvedimage>
-          <a-image material="opacity:1" src='#urbanlabelImg' position="0 3 5" rotation="0 180 0" width="5" height="5"></a-image>
+          <a-image src='#urbanlabelImg' position="0 0.5 5" rotation="0 180 0" width="5" height="5"></a-image>
         </a-entity>
 
-        <a-entity id="blackAndWhiteGroup">
+        <a-entity id="blackAndWhite">
           <a-curvedimage src="#blackAndWhiteBkgImg" id="blackAndWhiteImg" width="10px" height="10px" radius="10" theta-length="120"
             position="-6 2 0" rotation="0 -150 0">
           </a-curvedimage>
-          <a-image src='#blackANDwhitelabelImg' material="opacity:1" position="-5 3 0" rotation="0 90 0" width="5" height="5"></a-image>
+          <a-image src='#blackANDwhitelabelImg' position="-5 0.5 0" rotation="0 90 0" width="5" height="5"></a-image>
         </a-entity>
 
-        <a-entity id="portraitMenuGroup">
-          <a-curvedimage material="color:orange; opacity:1" id="portraitImg" width="10px" height="10px" radius="10" theta-length="120"
-            position="6 2 0" rotation="0 30 0">
+        <a-entity id="portrait">
+          <a-curvedimage src="#portraitBkgImg" id="portraitImg" width="10px" height="10px" radius="10" theta-length="120" position="6 2 0"
+            rotation="0 30 0">
           </a-curvedimage>
-          <a-image src='#portraitlabelImg' material="opacity:1" position="5 3 0" rotation="0 -90 0" width="5" height="5"></a-image>
+          <a-image src='#portraitlabelImg' position="5 0.5 0" rotation="0 -90 0" width="5" height="5"></a-image>
         </a-entity>
 
       </a-entity>
 
     </a-entity>
 
+    <a-entity class="miscellaneous">
+      <a-entity id="NikonCams">
+        <a-entity class="rotationOffset0">
+          <a-entity class="rotationOffset1a" rotation="0 -60 0">
+            <a-entity position="0 -1 -8">
+              <a-image src="#camImg" position="0 0 0" width="1" height="1"></a-image>
+              <a-image src="#shadowImg" position="0 -0.65 0" rotation="90 0 0" width="1" height="1"></a-image>
+            </a-entity>
+          </a-entity>
+
+          <a-entity class="rotationOffset1b" rotation="0 -120 0">
+            <a-entity position="0 -1 -8">
+              <a-image src="#camImg" position="0 0 0" width="1" height="1"></a-image>
+              <a-image src="#shadowImg" position="0 -0.65 0" rotation="90 0 0" width="1" height="1"></a-image>
+            </a-entity>
+          </a-entity>
+        </a-entity>
+
+        <a-entity class="rotationOffset0" rotation="0 90 0 ">
+          <a-entity class="rotationOffset1a" rotation="0 -60 0">
+            <a-entity position="0 -1 -8">
+              <a-image src="#camImg" position="0 0 0" width="1" height="1"></a-image>
+              <a-image src="#shadowImg" position="0 -0.65 0" rotation="90 0 0" width="1" height="1"></a-image>
+            </a-entity>
+          </a-entity>
+
+          <a-entity class="rotationOffset1b" rotation="0 -120 0">
+            <a-entity position="0 -1 -8">
+              <a-image src="#camImg" position="0 0 0" width="1" height="1"></a-image>
+              <a-image src="#shadowImg" position="0 -0.65 0" rotation="90 0 0" width="1" height="1"></a-image>
+            </a-entity>
+          </a-entity>
+        </a-entity>
+
+        <a-entity class="rotationOffset0" rotation="0 -180 0 ">
+          <a-entity class="rotationOffset1a" rotation="0 -60 0">
+            <a-entity position="0 -1 -8">
+              <a-image src="#camImg" position="0 0 0" width="1" height="1"></a-image>
+              <a-image src="#shadowImg" position="0 -0.65 0" rotation="90 0 0" width="1" height="1"></a-image>
+            </a-entity>
+          </a-entity>
+
+          <a-entity class="rotationOffset1b" rotation="0 -120 0">
+            <a-entity position="0 -1 -8">
+              <a-image src="#camImg" position="0 0 0" width="1" height="1"></a-image>
+              <a-image src="#shadowImg" position="0 -0.65 0" rotation="90 0 0" width="1" height="1"></a-image>
+            </a-entity>
+          </a-entity>
+        </a-entity>
+
+        <a-entity class="rotationOffset0" rotation="0 -90 0 ">
+          <a-entity class="rotationOffset1a" rotation="0 -60 0">
+            <a-entity position="0 -1 -8">
+              <a-image src="#camImg" position="0 0 0" width="1" height="1"></a-image>
+              <a-image src="#shadowImg" position="0 -0.65 0" rotation="90 0 0" width="1" height="1"></a-image>
+            </a-entity>
+          </a-entity>
+
+          <a-entity class="rotationOffset1b" rotation="0 -120 0">
+            <a-entity position="0 -1 -8">
+              <a-image src="#camImg" position="0 0 0" width="1" height="1"></a-image>
+              <a-image src="#shadowImg" position="0 -0.65 0" rotation="90 0 0" width="1" height="1"></a-image>
+            </a-entity>
+          </a-entity>
+        </a-entity>
+
+
+      </a-entity>
+    </a-entity>
+
     <a-entity id="galleries">
-
-
-
-      <a-entity id="landscapeMenuGroupPics">
-        <a-image src="#forest" material="opacity:1" position="5 2 0" rotation="0 -90 0" width="5" height="5"></a-image>
-        
-        <a-image src="#forest" material="opacity:1" position="-5 2 0" rotation="0 -90 0" width="5" height="5"></a-image>
+      <a-entity id="landscapeGallery" visible="false">
+        <a-image src="#forest"  position="5 2 0" rotation="0 -90 0" width="5" height="5"></a-image>
+        <a-image src="#forest" position="-5 2 0" rotation="0 -90 0" width="5" height="5"></a-image>
       </a-entity>
     </a-entity>
     <a-image src='#logo' rotation="-90 0 0" position="0 -0.5 0" width="5" height="5">
