@@ -31,7 +31,9 @@ class fadeAnimation {
 
         var hide_menu_images_id_0 = function () {
             console.log('event fade out END now');
-            var childsGen0 = menuImages.childNodes; // the 4 menu groups    
+            
+            // menuImages.setAttribute('material', 'visible', false);
+            var childsGen0 = menuImages.childNodes; // the 4 menu groups  
             for (let oneChildGenIndex in childsGen0) {
                 if (childsGen0[oneChildGenIndex].nodeName == 'A-ENTITY') {
                     childsGen0[oneChildGenIndex].childNodes[1].setAttribute('material', 'visible', false);
@@ -80,7 +82,7 @@ function after_load_SETUP() {
 }
 
 function start_listener_in_MenuImages() {
-    menuImages.addEventListener('mouseenter', function (event) {
+    menuImages.addEventListener('click', function (event) {
         // INFO:    event.detail.intersection.point);
         if (canHoverMainMenu) {
             try {
