@@ -25,8 +25,24 @@
     </a-assets>
 
     <a-assets id="landscapeMenuGroupImgs">
-      <img id="forest" src="https://ucarecdn.com/fd75f508-d0c7-4455-91fc-fec9cd8d33dc/" crossorigin="anonymous" />
+      <img id="forest" src="https://ucarecdn.com/c2b031e6-8692-4d6b-83ae-409544945597/" crossorigin="anonymous" />
+      <img id="madaenv" src="https://ucarecdn.com/11665f18-27e7-4fec-8063-9cc111212001/" crossorigin="anonymous" />
+      <img id="madarecolte" src="https://ucarecdn.com/ae6a6779-ab18-4a41-96bf-6be2faded89f/" crossorigin="anonymous" />
+      <img id="forest" src="https://ucarecdn.com/c2b031e6-8692-4d6b-83ae-409544945597/" crossorigin="anonymous" />
+    </a-assets>
 
+    <a-assets id="urbanMenuGroupImgs">
+      <img id="urban0" src="https://ucarecdn.com/d12d2fd6-07da-4dca-b189-bf953a5d19f2/" crossorigin="anonymous" />
+      <img id="urban1" src="https://ucarecdn.com/3b736abd-1e38-4092-8b59-2b7d0e1bfbb8/" crossorigin="anonymous" />
+      <img id="urban2" src="https://ucarecdn.com/b4ea8542-d00e-486d-9ac4-1e77e97aa877/" crossorigin="anonymous" />
+      <!-- <img id="urban3" src="https://ucarecdn.com/c2b031e6-8692-4d6b-83ae-409544945597/" crossorigin="anonymous" /> -->
+    </a-assets>
+
+    <a-assets id="portraitMenuGroupImgs">
+      <img id="portrait0" src="https://ucarecdn.com/c127a5ba-eeb5-4e68-9dd3-6049e5791cb3/" crossorigin="anonymous" />
+      <img id="portrait1" src="https://ucarecdn.com/b87e2c30-3d67-4b71-80b0-f68161a21da8/" crossorigin="anonymous" />
+      <img id="portrait2" src="https://ucarecdn.com/6674d3fd-43ec-44f2-b7a5-72a005173bdc/" crossorigin="anonymous" />
+      <img id="portrait3" src="https://ucarecdn.com/ef33f04d-b6cd-49e4-b548-86bfe3759c7e/" crossorigin="anonymous" />
     </a-assets>
 
     <!-- <a-box log="Hola!"></a-box> -->
@@ -45,21 +61,21 @@
           <a-curvedimage material="color:green" id="urbanImg" width="10px" height="10px" radius="10" theta-length="120" position="0 2 6"
             rotation="0 -60 0">
           </a-curvedimage>
-          <a-image src='#urbanlabelImg' position="0 0.5 5" rotation="0 180 0" width="5" height="5"></a-image>
+          <a-image class='clickable' src='#urbanlabelImg' position="0 0.5 5" rotation="0 180 0" width="5" height="5"></a-image>
         </a-entity>
 
         <a-entity id="blackAndWhite">
           <a-curvedimage src="#blackAndWhiteBkgImg" id="blackAndWhiteImg" width="10px" height="10px" radius="10" theta-length="120"
             position="-6 2 0" rotation="0 -150 0">
           </a-curvedimage>
-          <a-image src='#blackANDwhitelabelImg' position="-5 0.5 0" rotation="0 90 0" width="5" height="5"></a-image>
+          <a-image class='clickable' src='#blackANDwhitelabelImg' position="-5 0.5 0" rotation="0 90 0" width="5" height="5"></a-image>
         </a-entity>
 
         <a-entity id="portrait">
           <a-curvedimage src="#portraitBkgImg" id="portraitImg" width="10px" height="10px" radius="10" theta-length="120" position="6 2 0"
             rotation="0 30 0">
           </a-curvedimage>
-          <a-image src='#portraitlabelImg' position="5 0.5 0" rotation="0 -90 0" width="5" height="5"></a-image>
+          <a-image class='clickable' src='#portraitlabelImg' position="5 0.5 0" rotation="0 -90 0" width="5" height="5"></a-image>
         </a-entity>
 
       </a-entity>
@@ -137,11 +153,116 @@
     </a-entity>
 
     <a-entity id="galleries">
+
       <a-entity id="landscapeGallery" visible="false">
-        <a-image src="#forest" position="5 2 0" rotation="0 -90 0" width="5" height="5"></a-image>
-        <a-image src="#forest" position="-5 2 0" rotation="0 -90 0" width="5" height="5"></a-image>
+
+        <a-entity rotation="0 90 0">
+          <a-entity position="5 2 0">
+            <a-image src="#forest" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 0 0">
+          <a-entity position="5 2 0">
+            <a-image src="#madaenv" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 180 0">
+          <a-entity position="5 2 0">
+            <a-image src="#madarecolte" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 270 0">
+          <a-entity position="5 2 0">
+            <a-image src="#forest" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
       </a-entity>
+
+
+      <a-entity id="urbanGallery" visible="false">
+
+        <a-entity rotation="0 90 0">
+          <a-entity position="5 2 0">
+            <a-image src="#urban0" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 0 0">
+          <a-entity position="5 2 0">
+            <a-image src="#urban1" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 180 0">
+          <a-entity position="5 2 0">
+            <a-image src="#urban2" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+      </a-entity>
+
+      <a-entity id="blackAndWhiteGallery" visible="false">
+
+        <a-entity rotation="0 90 0">
+          <a-entity position="5 2 0">
+            <a-image src="#forest" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 0 0">
+          <a-entity position="5 2 0">
+            <a-image src="#madaenv" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 180 0">
+          <a-entity position="5 2 0">
+            <a-image src="#madarecolte" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 270 0">
+          <a-entity position="5 2 0">
+            <a-image src="#forest" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+      </a-entity>
+
+      <a-entity id="portraitGallery" visible="false">
+
+        <a-entity rotation="0 90 0">
+          <a-entity position="5 2 0">
+            <a-image src="#portrait0" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 0 0">
+          <a-entity position="5 2 0">
+            <a-image src="#portrait1" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 180 0">
+          <a-entity position="5 2 0">
+            <a-image src="#portrait2" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+        <a-entity rotation="0 270 0">
+          <a-entity position="5 2 0">
+            <a-image src="#portrait3" rotation="0 -90 0" width="8" height="5"></a-image>
+          </a-entity>
+        </a-entity>
+
+      </a-entity>
+
     </a-entity>
+
     <a-image src='#logo' rotation="-90 0 0" position="0 -0.5 0" width="5" height="5">
     </a-image>
     <a-plane position="0 -10 0" rotation="-90 0 0" scale="200 200 200" color="#f9eeca" id="myplane"></a-plane>
@@ -152,17 +273,12 @@
       </a-cursor>
     </a-entity> -->
 
-    <a-entity position="0 2.2 4">
+    <a-entity position="0 2 0">
       <a-entity camera look-controls>
-        <a-entity position="0 0 -3"
-                  geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.08;"
-                  material="color: cyan; shader: flat"
-                  cursor="maxDistance: 30; fuse: true; "
-                  raycaster="objects: .clickable">
-          <a-animation begin="click" easing="ease-in" attribute="scale"
-               fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
-          <a-animation begin="fusing" easing="ease-in" attribute="scale"
-               fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+        <a-entity position="0 0 -3" geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.08;" material="color: cyan; shader: flat"
+          cursor="maxDistance: 30; fuse: true; " raycaster="objects: .clickable">
+          <a-animation begin="click" easing="ease-in" attribute="scale" fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
+          <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
         </a-entity>
       </a-entity>
     </a-entity>

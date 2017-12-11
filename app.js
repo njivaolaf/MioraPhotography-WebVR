@@ -23,7 +23,7 @@ class fadeAnimation {
                         hide_menu_images_id_0();
                     default:
 
-                    break;
+                        break;
                 }
 
             });
@@ -31,7 +31,7 @@ class fadeAnimation {
 
         var hide_menu_images_id_0 = function () {
             console.log('event fade out END now');
-            
+
             // menuImages.setAttribute('material', 'visible', false);
             var childsGen0 = menuImages.childNodes; // the 4 menu groups  
             for (let oneChildGenIndex in childsGen0) {
@@ -95,12 +95,17 @@ function start_listener_in_MenuImages() {
                 //     break;
                 // }
                 var imglblParentId = currentTarget.parentElement.id; //e.g: landscape
-                var nowGalleryNode =  document.querySelector('#'.concat(imglblParentId).concat('Gallery'));
-                if(nowGalleryNode){
-                    nowGalleryNode.setAttribute('visible','true');  //showing gallery
-                }
+                var nowGalleryNode = document.querySelector('#'.concat(imglblParentId).concat('Gallery'));
+
+                window.setTimeout(function () {
+                    if (nowGalleryNode) {
+                        nowGalleryNode.setAttribute('visible', 'true');  //showing gallery
+                    }
+                }, 1000);
+
+
                 var anim_fadeOut = new fadeOutAnimInChilds2gen(menuImages.childNodes, [1, 3]);
-                document.querySelector('#NikonCams').setAttribute('visible',false); //hiding cameras
+                document.querySelector('#NikonCams').setAttribute('visible', false); //hiding cameras
                 anim_fadeOut.startAnim();
             } catch (e) {
                 console.log(e);
