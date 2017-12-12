@@ -5,7 +5,7 @@ var meshMixins = AFRAME.primitives.getMeshMixin();
 var menuImages;
 var mainMenu;
 var currentGallery;
-
+var reticle;
 const clickableMG_classname = 'clickableMG';    //menu gallery // the 4 panels -clickable
 const non_clickableMG_classname = 'non_clickableMG';
 //Hover setup
@@ -77,9 +77,11 @@ function after_load_SETUP() {
     mainMenu = document.querySelector('#mainMenu');
     // currentGallery = document.querySelector('#currentGallery');
     menuImages = document.querySelector('#menuImages');
+    reticle = document.querySelector('#reticle');
     window.setTimeout(function () {
         start_listener_in_MenuImages();
-    }, 4000);
+    }, 1000);
+
 
 }
 
@@ -87,46 +89,48 @@ function start_listener_in_MenuImages() {
     menuImages.addEventListener('click', function (event) {
         // INFO:    event.detail.intersection.point);
 
-                var currentTarget = event.detail.target;
-				switch (currentTarget.className){
-                    case clickableMG_classname:
-                        var all_Clickable_MG = document.getElementsByClassName(clickableMG_classname);
-                        console.log(all_Clickable_MG);
-                        console.log(document.getElementById("camRaycaster"));
-                        for (let oneclickable_MG of  all_Clickable_MG){
-                            // TO REVIEW -- The classList property is not supported in Internet Explorer 9
-                            oneclickable_MG.classList.remove(clickableMG_classname);
-                            oneclickable_MG.classList.add(non_clickableMG_classname);
-                        }
-                        console.log(all_Clickable_MG);
-						if (canHoverMainMenu) {
-							try {
-									canHoverMainMenu = false;
-									console.log('entered');
-									// switch (event.path[0].id) {
-									//     default:
-									//      console.log('path is =', event.path[0].id);
-									//     break;
-									// }
-									var imglblParentId = currentTarget.parentElement.id; //e.g: landscape
-									var nowGalleryNode = document.querySelector('#'.concat(imglblParentId).concat('Gallery'));
+        var currentTarget = event.detail.target;
+        switch (currentTarget.className) {
+            case clickableMG_classname:
+                var all_Clickable_MG = document.getElementsByClassName(clickableMG_classname);
+                while (all_Clickable_MG.length > 0) {
+                    // TO REVIEW -- The classList property is not supported in Internet Explorer 9
+                    all_Clickable_MG.item(0).classList.add(non_clickableMG_classname); // always ADD before REMOVE
+                    all_Clickable_MG.item(0).classList.remove(clickableMG_classname);
+                }
 
-									window.setTimeout(function () {
-											if (nowGalleryNode) {
-													nowGalleryNode.setAttribute('visible', 'true');  //showing gallery
-											}
-									}, 1000);
+                console.log(all_Clickable_MG);
+                if (canHoverMainMenu) {
+                    try {
+                        canHoverMainMenu = false;
+                        console.log('entered');
+                        // switch (event.path[0].id) {
+                        //     default:
+                        //      console.log('path is =', event.path[0].id);
+                        //     break;
+                        // }
+                        var imglblParentId = currentTarget.parentElement.id; //e.g: landscape
+                        var nowGalleryNode = document.querySelector('#'.concat(imglblParentId).concat('Gallery'));
+
+                        window.setTimeout(function () {
+                            if (nowGalleryNode) {
+                                nowGalleryNode.setAttribute('visible', 'true');  //showing gallery
+                            }
+                        }, 1000);
 
 
-									var anim_fadeOut = new fadeOutAnimInChilds2gen(menuImages.childNodes, [1, 3]);
-									document.querySelector('#NikonCams').setAttribute('visible', false); //hiding cameras
-									anim_fadeOut.startAnim();
-							} catch (e) {
-									console.log(e);
-							}
-					}
-					break;
-				}
+                        var anim_fadeOut = new fadeOutAnimInChilds2gen(menuImages.childNodes, [1, 3]);
+                        document.querySelector('#NikonCams').setAttribute('visible', false); //hiding cameras
+                        anim_fadeOut.startAnim();
+                    } catch (e) {
+                        console.log(e);
+                    }
+                }
+
+                reset_reticle_raycaster(reticle);
+
+                break;
+        }
     });
 }
 
@@ -145,3 +149,12 @@ function set_menu_Images() {
 $(document).ready(function () {
     after_load_SETUP();
 });
+
+function reset_reticle_raycaster(reticle_) {    //refreshing raycaster's local objects
+    try{
+        reticle_.components.raycaster.refreshObjects(); 
+    } catch (e){
+        console.log(e);
+    }
+    
+}
