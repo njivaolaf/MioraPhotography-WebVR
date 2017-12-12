@@ -6,6 +6,8 @@ var menuImages;
 var mainMenu;
 var currentGallery;
 
+const clickableMG_classname = 'clickableMG';    //menu gallery // the 4 panels -clickable
+const non_clickableMG_classname = 'non_clickableMG';
 //Hover setup
 var canHoverMainMenu = true;
 
@@ -84,33 +86,47 @@ function after_load_SETUP() {
 function start_listener_in_MenuImages() {
     menuImages.addEventListener('click', function (event) {
         // INFO:    event.detail.intersection.point);
-        if (canHoverMainMenu) {
-            try {
-                canHoverMainMenu = false;
-                console.log('entered');
+
                 var currentTarget = event.detail.target;
-                // switch (event.path[0].id) {
-                //     default:
-                //      console.log('path is =', event.path[0].id);
-                //     break;
-                // }
-                var imglblParentId = currentTarget.parentElement.id; //e.g: landscape
-                var nowGalleryNode = document.querySelector('#'.concat(imglblParentId).concat('Gallery'));
+				switch (currentTarget.className){
+                    case clickableMG_classname:
+                        var all_Clickable_MG = document.getElementsByClassName(clickableMG_classname);
+                        console.log(all_Clickable_MG);
+                        console.log(document.getElementById("camRaycaster"));
+                        for (let oneclickable_MG of  all_Clickable_MG){
+                            // TO REVIEW -- The classList property is not supported in Internet Explorer 9
+                            oneclickable_MG.classList.remove(clickableMG_classname);
+                            oneclickable_MG.classList.add(non_clickableMG_classname);
+                        }
+                        console.log(all_Clickable_MG);
+						if (canHoverMainMenu) {
+							try {
+									canHoverMainMenu = false;
+									console.log('entered');
+									// switch (event.path[0].id) {
+									//     default:
+									//      console.log('path is =', event.path[0].id);
+									//     break;
+									// }
+									var imglblParentId = currentTarget.parentElement.id; //e.g: landscape
+									var nowGalleryNode = document.querySelector('#'.concat(imglblParentId).concat('Gallery'));
 
-                window.setTimeout(function () {
-                    if (nowGalleryNode) {
-                        nowGalleryNode.setAttribute('visible', 'true');  //showing gallery
-                    }
-                }, 1000);
+									window.setTimeout(function () {
+											if (nowGalleryNode) {
+													nowGalleryNode.setAttribute('visible', 'true');  //showing gallery
+											}
+									}, 1000);
 
 
-                var anim_fadeOut = new fadeOutAnimInChilds2gen(menuImages.childNodes, [1, 3]);
-                document.querySelector('#NikonCams').setAttribute('visible', false); //hiding cameras
-                anim_fadeOut.startAnim();
-            } catch (e) {
-                console.log(e);
-            }
-        }
+									var anim_fadeOut = new fadeOutAnimInChilds2gen(menuImages.childNodes, [1, 3]);
+									document.querySelector('#NikonCams').setAttribute('visible', false); //hiding cameras
+									anim_fadeOut.startAnim();
+							} catch (e) {
+									console.log(e);
+							}
+					}
+					break;
+				}
     });
 }
 
