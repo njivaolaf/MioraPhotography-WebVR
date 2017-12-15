@@ -6,7 +6,7 @@ var menuImages;
 var mainMenu;
 var currentGallery;
 var reticle;
-const clickableMG_classname = 'clickableMG';    //menu gallery // the 4 panels -clickable
+const clickableMG_classname = 'clickableMG'; //menu gallery // the 4 panels -clickable
 const non_clickableMG_classname = 'non_clickableMG';
 //Hover setup
 var canHoverMainMenu = true;
@@ -47,7 +47,7 @@ class fadeAnimation {
 }
 
 class fadeOutAnimInChilds2gen {
-    constructor(parentNodes, childIndexes) {       // opacityToVal-- 1 or 0 (final value in opacity)
+    constructor(parentNodes, childIndexes) { // opacityToVal-- 1 or 0 (final value in opacity)
         this.allowAnimEndBool = true;
         this.parentNodes = parentNodes;
         this.childIndexes = childIndexes;
@@ -111,10 +111,9 @@ function start_listener_in_MenuImages() {
                         // }
                         var imglblParentId = currentTarget.parentElement.id; //e.g: landscape
                         var nowGalleryNode = document.querySelector('#'.concat(imglblParentId).concat('Gallery'));
-
                         window.setTimeout(function () {
                             if (nowGalleryNode) {
-                                nowGalleryNode.setAttribute('visible', 'true');  //showing gallery
+                              nowGalleryNode.setAttribute('visible', 'true');
                             }
                         }, 1000);
 
@@ -150,11 +149,12 @@ $(document).ready(function () {
     after_load_SETUP();
 });
 
-function reset_reticle_raycaster(reticle_) {    //refreshing raycaster's local objects
-    try{
-        reticle_.components.raycaster.refreshObjects(); 
-    } catch (e){
+
+function reset_reticle_raycaster(reticle_) { //refreshing raycaster's local objects
+    try {
+        reticle_.components.raycaster.refreshObjects();
+    } catch (e) {
         console.log(e);
     }
-    
+
 }
