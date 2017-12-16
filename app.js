@@ -22,7 +22,7 @@ class fadeAnimation {
 
                 switch (animEndCallbackID) {
                     case 0:
-                        hide_menu_images_id_0();
+                        hide_or_Show_menu_images_id_0();
                     default:
 
                         break;
@@ -31,15 +31,27 @@ class fadeAnimation {
             });
         }
 
-        var hide_menu_images_id_0 = function () {
+        var hide_or_Show_menu_images_id_0 = function () {
             console.log('event fade out END now');
 
             // menuImages.setAttribute('material', 'visible', false);
             var childsGen0 = menuImages.childNodes; // the 4 menu groups  
             for (let oneChildGenIndex in childsGen0) {
                 if (childsGen0[oneChildGenIndex].nodeName == 'A-ENTITY') {
-                    childsGen0[oneChildGenIndex].childNodes[1].setAttribute('material', 'visible', false);
-                    childsGen0[oneChildGenIndex].childNodes[3].setAttribute('material', 'visible', false);
+                    var boolVisible = false;
+                    switch (opacityValue) {
+                        case 0:
+                            boolVisible = false;
+                            break;
+                        case 1:
+                            boolVisible = true;
+                            break;
+                        default:
+                            boolVisible = false;
+                            break;
+                    }
+                    childsGen0[oneChildGenIndex].childNodes[1].setAttribute('material', 'visible', boolVisible);
+                    childsGen0[oneChildGenIndex].childNodes[3].setAttribute('material', 'visible', boolVisible);
                 }
             }
         }
@@ -80,7 +92,7 @@ function after_load_SETUP() {
     reticle = document.querySelector('#reticle');
     window.setTimeout(function () {
         start_listener_in_MenuImages();
-    }, 1000);
+    }, 4000);
 
 
 }
@@ -151,10 +163,10 @@ $(document).ready(function () {
 });
 
 function reset_reticle_raycaster(reticle_) {    //refreshing raycaster's local objects
-    try{
-        reticle_.components.raycaster.refreshObjects(); 
-    } catch (e){
+    try {
+        reticle_.components.raycaster.refreshObjects();
+    } catch (e) {
         console.log(e);
     }
-    
+
 }
