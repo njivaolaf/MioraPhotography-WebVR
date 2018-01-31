@@ -162,12 +162,7 @@ $(document).ready(function () {
     after_load_SETUP();
 });
 
-<<<<<<< HEAD
-
-function reset_reticle_raycaster(reticle_) { //refreshing raycaster's local objects
-=======
 function reset_reticle_raycaster(reticle_) {    //refreshing raycaster's local objects
->>>>>>> 873ff59dc679843121f5c381d9bb0358ff9a6ec6
     try {
         reticle_.components.raycaster.refreshObjects();
     } catch (e) {
